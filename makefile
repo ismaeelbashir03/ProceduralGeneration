@@ -1,15 +1,14 @@
-MAIN := src/main.cpp
 OUTPUT_DIR := output
 INCLUDE_DIR := include
 
-all: clean build run
+universe: u_build u_run
 
-build:
+u_build:
 	mkdir -p $(OUTPUT_DIR)
-	g++ $(MAIN) -o $(OUTPUT_DIR)/main -I $(INCLUDE_DIR)/
+	g++ src/universe.cpp -o $(OUTPUT_DIR)/universe -I $(INCLUDE_DIR)/
 
-run:
-	./$(OUTPUT_DIR)/main
+u_run:
+	./$(OUTPUT_DIR)/universe
 
 clean:
 	rm -rf $(OUTPUT_DIR)
